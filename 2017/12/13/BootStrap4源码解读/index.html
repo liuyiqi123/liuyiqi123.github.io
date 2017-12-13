@@ -3,24 +3,24 @@
 <head>
     <meta charset="utf-8">
     
-    <title>2017年11月第一周 | Vk&#39;s blog</title>
+    <title>BootStrap4源码解读 | Vk&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="life thinking" />
+        <meta name="keywords" content="front-end" />
     
-    <meta name="description" content="在可以为之努力和奢求中找到一条人与人之间的界线，是营造一个舒适朋友圈的基础   程序员大赛复赛的第二天我才知道自己入围了，当时很欣喜，一看要投票，做过微信运营的我感到有些尴尬。我看了其他人的作品和投票，自己作品在入围作品里还不错。第一反应是告诉当时鼓励申报的领导、现领导、部门HRBP这个好消息，第二行动是向公司相关同事群拉票，如果并不熟悉群里人会卖个萌发个红包，最后在自己朋友圈发了一下，既有欣">
-<meta name="keywords" content="life thinking">
+    <meta name="description" content="Bootstrap 是全球最受欢迎的前端组件库，未读过不足以谈前端人生。   做为开发人员为什么要读代码？如同设计人员看展览、看优秀作品一样，是一种快速学习方式。 内容 BootStrap4的特点 目录文件解读  BootStrap4的特点——灵活有序 配色方案更丰富专业，增加灰度扩展 基于FlexBox弹性布局，网格系统更加灵活（同时也牺牲了浏览器兼容性） 统一使用card，去掉了wall、p">
+<meta name="keywords" content="front-end">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2017年11月第一周">
-<meta property="og:url" content="http://liuyiqi123.github.io/2017/11/03/2017年11月第一周/index.html">
+<meta property="og:title" content="BootStrap4源码解读">
+<meta property="og:url" content="http://liuyiqi123.github.io/2017/12/13/BootStrap4源码解读/index.html">
 <meta property="og:site_name" content="Vk&#39;s blog">
-<meta property="og:description" content="在可以为之努力和奢求中找到一条人与人之间的界线，是营造一个舒适朋友圈的基础   程序员大赛复赛的第二天我才知道自己入围了，当时很欣喜，一看要投票，做过微信运营的我感到有些尴尬。我看了其他人的作品和投票，自己作品在入围作品里还不错。第一反应是告诉当时鼓励申报的领导、现领导、部门HRBP这个好消息，第二行动是向公司相关同事群拉票，如果并不熟悉群里人会卖个萌发个红包，最后在自己朋友圈发了一下，既有欣">
-<meta property="og:image" content="http://liuyiqi123.github.io/image/ikle_less_is_more.jpeg">
-<meta property="og:updated_time" content="2017-11-13T11:46:37.808Z">
+<meta property="og:description" content="Bootstrap 是全球最受欢迎的前端组件库，未读过不足以谈前端人生。   做为开发人员为什么要读代码？如同设计人员看展览、看优秀作品一样，是一种快速学习方式。 内容 BootStrap4的特点 目录文件解读  BootStrap4的特点——灵活有序 配色方案更丰富专业，增加灰度扩展 基于FlexBox弹性布局，网格系统更加灵活（同时也牺牲了浏览器兼容性） 统一使用card，去掉了wall、p">
+<meta property="og:image" content="http://liuyiqi123.github.io/image/ikle_bootstrap_icon.png">
+<meta property="og:updated_time" content="2017-12-13T16:06:31.559Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2017年11月第一周">
-<meta name="twitter:description" content="在可以为之努力和奢求中找到一条人与人之间的界线，是营造一个舒适朋友圈的基础   程序员大赛复赛的第二天我才知道自己入围了，当时很欣喜，一看要投票，做过微信运营的我感到有些尴尬。我看了其他人的作品和投票，自己作品在入围作品里还不错。第一反应是告诉当时鼓励申报的领导、现领导、部门HRBP这个好消息，第二行动是向公司相关同事群拉票，如果并不熟悉群里人会卖个萌发个红包，最后在自己朋友圈发了一下，既有欣">
-<meta name="twitter:image" content="http://liuyiqi123.github.io/image/ikle_less_is_more.jpeg">
+<meta name="twitter:title" content="BootStrap4源码解读">
+<meta name="twitter:description" content="Bootstrap 是全球最受欢迎的前端组件库，未读过不足以谈前端人生。   做为开发人员为什么要读代码？如同设计人员看展览、看优秀作品一样，是一种快速学习方式。 内容 BootStrap4的特点 目录文件解读  BootStrap4的特点——灵活有序 配色方案更丰富专业，增加灰度扩展 基于FlexBox弹性布局，网格系统更加灵活（同时也牺牲了浏览器兼容性） 统一使用card，去掉了wall、p">
+<meta name="twitter:image" content="http://liuyiqi123.github.io/image/ikle_bootstrap_icon.png">
     
 
     
@@ -128,18 +128,18 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/思考/">思考</a>
+    <a class="page-title-link" href="/categories/front-end/">前端</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-2017年11月第一周" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-BootStrap4源码解读" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        2017年11月第一周
+        BootStrap4源码解读
         </h1>
     
 
@@ -149,41 +149,43 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2017/11/03/2017年11月第一周/" class="article-date">
-            <time datetime="2017-11-03T15:10:23.000Z" itemprop="datePublished">2017-11-03</time>
+        <a href="/2017/12/13/BootStrap4源码解读/" class="article-date">
+            <time datetime="2017-12-13T11:26:51.000Z" itemprop="datePublished">2017-12-13</time>
         </a>
     </div>
 
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/life-thinking/">life thinking</a>
+        <a class="tag-link" href="/tags/front-end/">front-end</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p><img src="/image/ikle_less_is_more.jpeg" alt="Less is more"></p>
-<blockquote>
-<p>在可以为之努力和奢求中找到一条人与人之间的界线，是营造一个舒适朋友圈的基础</p>
+            <blockquote>
+<p>Bootstrap 是全球最受欢迎的前端组件库，未读过不足以谈前端人生。</p>
 </blockquote>
 <hr>
-<p>程序员大赛复赛的第二天我才知道自己入围了，当时很欣喜，一看要投票，做过微信运营的我感到有些尴尬。<br>我看了其他人的作品和投票，自己作品在入围作品里还不错。第一反应是告诉当时鼓励申报的领导、现领导<br>、部门HRBP这个好消息，第二行动是向公司相关同事群拉票，如果并不熟悉群里人会卖个萌发个红包，<br>最后在自己朋友圈发了一下，既有欣喜也有拉票的尴尬，然后所有努力就到此为之。</p>
-<p>我也想冲前面，谁不想赢呢？如果有些差距无法靠努力超越，何必去打扰身边的人？<br>想一想大多数人的奢求最后换回的是自己造成的人情冷暖。<br>我选择了适可而止，下一次，或许发朋友圈的时候都不会拉票，问问大家喜不喜欢就好。<br>很庆幸自己做出了这样的选择，看着身边人点赞、留言、鼓励、私信、转发心里收获的是对关系的感激和肯定，满足感油然而生。</p>
-<blockquote>
-<p>我选择复合，是自己对感情的一种态度</p>
-</blockquote>
-<hr>
-<p>分手的时候我哭了15天，每天睡2-4小时，瘦了12斤，她迅速找了一位女朋友，不回头；<br>朋友们都安慰我彼此不合适，或者规劝我千万不要回头，<br>如果当时在我挽回期间她来找我，我想我会背叛身边所有人和她走。</p>
-<p>从黑暗、平静、放下，到开始自己的生活；从瘦了12斤到胖了14斤；从以前的大大咧咧到现在的有所分寸；<br>也就过去了短短2个月。</p>
-<p>昨天会议中突然闪起她的电话，我当着参会人接了，然后告诉她一会儿回；<br>会议后看到S的几条微信，她好像很激动要给我说什么；<br>她认真开玩笑的说告诉我一个不好的消息，我接戏的同时，心里也猜了；<br>我没有太犹豫就回答了S，挂完电话还是有些犹豫，说先别告诉她。</p>
-<p>正如某篇文章里说的，当我说我想你了，不是我想你了，是我想你想得憋不住了；<br>我想她突然的电话也是如此吧，那么要强的一个人；<br>我难过的时候也想过我们很多问题，以己度人，浪子回头金不换；</p>
-<p>我向S回答的本能反应也体现了自己的意愿；<br>我选择复合，是自己对感情对一种态度，哪有十全十美合适的对象？不如耐着性子不断修炼彼此的感情<br>挑一手好牌和玩好一手牌之间，了解自己心只有这么大后，确定换不了几副；</p>
-<p>说到犹豫，因为我也发生了很多事情，以我对她之前的了解害怕她介意；<br>反过来她也有，S替她问了我；<br>S说 恭喜你们克服困难，感情又上了一个台阶，以后会更好；<br>S总是这么理智气壮又很有道理的强势推进；</p>
-<p>下班给她回了电话，她问我 愿意带娃么，我说 我愿意，简单的言语算是双方复合的表态了；</p>
-<p>要说就这么顺利了，也不是，心里多多少少有些小的不确信。<br>正如我给她说过的，感情是一场与不确定因素共舞的游戏，希望彼此找到确定的因子。</p>
-<p>多了一些问自己是否愿意，少了一些奋不顾身</p>
+<p>做为开发人员为什么要读代码？如同设计人员看展览、看优秀作品一样，是一种快速学习方式。</p>
+<h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><ul>
+<li><a href="#BootStrap4的特点">BootStrap4的特点</a></li>
+<li><a href="#目录文件解读">目录文件解读</a></li>
+</ul>
+<h2 id="BootStrap4的特点"><a href="#BootStrap4的特点" class="headerlink" title="BootStrap4的特点"></a>BootStrap4的特点</h2><h4 id="——灵活有序"><a href="#——灵活有序" class="headerlink" title="——灵活有序"></a>——灵活有序</h4><ul>
+<li>配色方案更丰富专业，增加灰度扩展</li>
+<li>基于FlexBox弹性布局，网格系统更加灵活（同时也牺牲了浏览器兼容性）</li>
+<li>统一使用card，去掉了wall、panel等面板类样式或组件（更进一步的精简抽象）</li>
+<li>去掉了字体图标做为必要组成部分，改推荐第三方图标（每个项目有自己的VI，尤其在图标上，剥离掉很明智）</li>
+<li>使用第三方库改进Tooltips</li>
+<li>em定义基础宽度，使用时只用考虑基础宽度的倍数（符合设计排版思路，解决项目中过多的随意尺寸这个人13px，那个人17px）</li>
+<li>盒模型、布局方面属性抽到Utilities，更丰富、自由的样式设置：display-/float-/p-…</li>
+</ul>
+<p>相比BootStrap3当然还有很多其他不一样的地方，我仅从设计、项目运用的角度说了几个比较大的感受。</p>
+<h2 id="目录文件解读"><a href="#目录文件解读" class="headerlink" title="目录文件解读"></a>目录文件解读</h2><p>从目录开始学习，希望从架构上看看运用了哪些构建工具，这些工具有什么作用，<br>从而了解一套前端UI框架是怎么生产出来的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">bootstrap/</div><div class="line">├── _data/</div><div class="line">├── _includes/</div><div class="line">├── _layouts/</div><div class="line">├── _plugins/</div><div class="line">├── .github</div><div class="line">├── assets</div><div class="line">├── build</div><div class="line">├── dist</div><div class="line">├── docs</div><div class="line">├── js</div><div class="line">├── nuget</div><div class="line">├── scss</div><div class="line">├── _config.yml</div><div class="line">├── .babelrc.js</div><div class="line">├── .editorconfig.js</div><div class="line">├── .eslintignore.js</div><div class="line">├── .gitattributes.js</div><div class="line">├── .gitignore.js</div><div class="line">├── .travis.yml // [Travis Ci] 测试配置</div><div class="line">├── CNAME // 解析用</div><div class="line">├── CODE_OF_CONDUCT.md // 项目相关的一系列规则，教义</div><div class="line">├── composer.json  // [PHP] 配置文件，依赖管理</div><div class="line">├── favicon.ico</div><div class="line">├── Gemfile // [Ruby] 定义Ruby项目的gem依赖</div><div class="line">├── Gemfile.lock</div><div class="line">├── index.html</div><div class="line">├── LICENSE // [OSI] 开源软件证明</div><div class="line">├── package-lock.json // [npm] 快照，用于明确各依赖的版本号</div><div class="line">├── package.js // [Meteor] 基本信息、用了哪些包</div><div class="line">├── package.json // [npm] 定义了项目所需模块，以及项目的配置信息（比如名称、版本、许可证等元数据）</div><div class="line">├── README.md // [gitHub] 用于项目简介</div><div class="line">├── robots.txt // [robotstxt] 用来告诉搜索引擎，哪些内容不应被搜获取，哪些内容可获取</div><div class="line">├── sache.json // [Sass] 做为Sass扩展和工具在Sache中心分享</div><div class="line">└── sw.js  // [Workbox] service worker用于离线运行、提升重复访问中的加载性能</div></pre></td></tr></table></figure>
+<p>未完待续</p>
 
         </div>
         <footer class="article-footer">
@@ -191,7 +193,7 @@
 
 
 
-    <a data-url="http://liuyiqi123.github.io/2017/11/03/2017年11月第一周/" data-id="cjb58x9g10001e6t55j8stmhg" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://liuyiqi123.github.io/2017/12/13/BootStrap4源码解读/" data-id="cjb58x9ip000re6t5hqxro1ca" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -328,20 +330,20 @@
         
 <nav id="article-nav">
     
-        <a href="/2017/11/12/2017年11月第二周/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2017/12/13/Run-Then-find-a-way-out/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">下一篇</strong>
         <p class="article-nav-title">
         
-            2017年11月第二周
+            Run, Then find a way out
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/2017/10/29/2017年10月第四周/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/12/10/2017年12月第二周/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">2017年10月第四周</p>
+        <p class="article-nav-title">2017年12月第二周</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -541,7 +543,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://liuyiqi123.github.io/2017/11/03/2017年11月第一周/';
+    var disqus_url = 'http://liuyiqi123.github.io/2017/12/13/BootStrap4源码解读/';
     
     (function() {
     var dsq = document.createElement('script');
