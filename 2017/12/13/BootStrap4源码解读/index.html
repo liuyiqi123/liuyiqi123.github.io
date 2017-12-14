@@ -6,20 +6,20 @@
     <title>BootStrap4源码解读 | Vk&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="front-end" />
+        <meta name="keywords" content="front-end,BootStrap4" />
     
-    <meta name="description" content="Bootstrap 是全球最受欢迎的前端组件库，未读过不足以谈前端人生。   做为开发人员为什么要读代码？如同设计人员看展览、看优秀作品一样，是一种快速学习方式。 内容 BootStrap4的特点 目录文件解读  BootStrap4的特点——灵活有序 配色方案更丰富专业，增加灰度扩展 基于FlexBox弹性布局，网格系统更加灵活（同时也牺牲了浏览器兼容性） 统一使用card，去掉了wall、p">
-<meta name="keywords" content="front-end">
+    <meta name="description" content="Bootstrap 是全球最受欢迎的前端组件库，未读过不足以谈前端人生。   做为开发人员为什么要读代码？如同设计人员看展览、看优秀作品一样，是一种快速学习方式。 内容 BootStrap4的特点 目录文件解读 BootStrap4核心源码学习  BootStrap4的特点——灵活有序 配色方案更丰富专业，增加灰度扩展 基于FlexBox弹性布局，网格系统更加灵活（同时也牺牲了浏览器兼容性） 统">
+<meta name="keywords" content="front-end,BootStrap4">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BootStrap4源码解读">
 <meta property="og:url" content="http://liuyiqi123.github.io/2017/12/13/BootStrap4源码解读/index.html">
 <meta property="og:site_name" content="Vk&#39;s blog">
-<meta property="og:description" content="Bootstrap 是全球最受欢迎的前端组件库，未读过不足以谈前端人生。   做为开发人员为什么要读代码？如同设计人员看展览、看优秀作品一样，是一种快速学习方式。 内容 BootStrap4的特点 目录文件解读  BootStrap4的特点——灵活有序 配色方案更丰富专业，增加灰度扩展 基于FlexBox弹性布局，网格系统更加灵活（同时也牺牲了浏览器兼容性） 统一使用card，去掉了wall、p">
+<meta property="og:description" content="Bootstrap 是全球最受欢迎的前端组件库，未读过不足以谈前端人生。   做为开发人员为什么要读代码？如同设计人员看展览、看优秀作品一样，是一种快速学习方式。 内容 BootStrap4的特点 目录文件解读 BootStrap4核心源码学习  BootStrap4的特点——灵活有序 配色方案更丰富专业，增加灰度扩展 基于FlexBox弹性布局，网格系统更加灵活（同时也牺牲了浏览器兼容性） 统">
 <meta property="og:image" content="http://liuyiqi123.github.io/image/ikle_bootstrap_icon.png">
-<meta property="og:updated_time" content="2017-12-13T16:06:31.559Z">
+<meta property="og:updated_time" content="2017-12-14T15:17:13.958Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BootStrap4源码解读">
-<meta name="twitter:description" content="Bootstrap 是全球最受欢迎的前端组件库，未读过不足以谈前端人生。   做为开发人员为什么要读代码？如同设计人员看展览、看优秀作品一样，是一种快速学习方式。 内容 BootStrap4的特点 目录文件解读  BootStrap4的特点——灵活有序 配色方案更丰富专业，增加灰度扩展 基于FlexBox弹性布局，网格系统更加灵活（同时也牺牲了浏览器兼容性） 统一使用card，去掉了wall、p">
+<meta name="twitter:description" content="Bootstrap 是全球最受欢迎的前端组件库，未读过不足以谈前端人生。   做为开发人员为什么要读代码？如同设计人员看展览、看优秀作品一样，是一种快速学习方式。 内容 BootStrap4的特点 目录文件解读 BootStrap4核心源码学习  BootStrap4的特点——灵活有序 配色方案更丰富专业，增加灰度扩展 基于FlexBox弹性布局，网格系统更加灵活（同时也牺牲了浏览器兼容性） 统">
 <meta name="twitter:image" content="http://liuyiqi123.github.io/image/ikle_bootstrap_icon.png">
     
 
@@ -157,7 +157,7 @@
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/front-end/">front-end</a>
+        <a class="tag-link" href="/tags/BootStrap4/">BootStrap4</a>, <a class="tag-link" href="/tags/front-end/">front-end</a>
     </div>
 
             </div>
@@ -172,6 +172,7 @@
 <h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><ul>
 <li><a href="#BootStrap4的特点">BootStrap4的特点</a></li>
 <li><a href="#目录文件解读">目录文件解读</a></li>
+<li><a href="/2017/12/14/BootStrap4核心源码学习/">BootStrap4核心源码学习</a></li>
 </ul>
 <h2 id="BootStrap4的特点"><a href="#BootStrap4的特点" class="headerlink" title="BootStrap4的特点"></a>BootStrap4的特点</h2><h4 id="——灵活有序"><a href="#——灵活有序" class="headerlink" title="——灵活有序"></a>——灵活有序</h4><ul>
 <li>配色方案更丰富专业，增加灰度扩展</li>
@@ -184,8 +185,14 @@
 </ul>
 <p>相比BootStrap3当然还有很多其他不一样的地方，我仅从设计、项目运用的角度说了几个比较大的感受。</p>
 <h2 id="目录文件解读"><a href="#目录文件解读" class="headerlink" title="目录文件解读"></a>目录文件解读</h2><p>从目录开始学习，希望从架构上看看运用了哪些构建工具，这些工具有什么作用，<br>从而了解一套前端UI框架是怎么生产出来的。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">bootstrap/</div><div class="line">├── _data/</div><div class="line">├── _includes/</div><div class="line">├── _layouts/</div><div class="line">├── _plugins/</div><div class="line">├── .github</div><div class="line">├── assets</div><div class="line">├── build</div><div class="line">├── dist</div><div class="line">├── docs</div><div class="line">├── js</div><div class="line">├── nuget</div><div class="line">├── scss</div><div class="line">├── _config.yml</div><div class="line">├── .babelrc.js</div><div class="line">├── .editorconfig.js</div><div class="line">├── .eslintignore.js</div><div class="line">├── .gitattributes.js</div><div class="line">├── .gitignore.js</div><div class="line">├── .travis.yml // [Travis Ci] 测试配置</div><div class="line">├── CNAME // 解析用</div><div class="line">├── CODE_OF_CONDUCT.md // 项目相关的一系列规则，教义</div><div class="line">├── composer.json  // [PHP] 配置文件，依赖管理</div><div class="line">├── favicon.ico</div><div class="line">├── Gemfile // [Ruby] 定义Ruby项目的gem依赖</div><div class="line">├── Gemfile.lock</div><div class="line">├── index.html</div><div class="line">├── LICENSE // [OSI] 开源软件证明</div><div class="line">├── package-lock.json // [npm] 快照，用于明确各依赖的版本号</div><div class="line">├── package.js // [Meteor] 基本信息、用了哪些包</div><div class="line">├── package.json // [npm] 定义了项目所需模块，以及项目的配置信息（比如名称、版本、许可证等元数据）</div><div class="line">├── README.md // [gitHub] 用于项目简介</div><div class="line">├── robots.txt // [robotstxt] 用来告诉搜索引擎，哪些内容不应被搜获取，哪些内容可获取</div><div class="line">├── sache.json // [Sass] 做为Sass扩展和工具在Sache中心分享</div><div class="line">└── sw.js  // [Workbox] service worker用于离线运行、提升重复访问中的加载性能</div></pre></td></tr></table></figure>
-<p>未完待续</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">bootstrap/</div><div class="line">├── _data/ // 用于Docs的数据</div><div class="line">├── _includes/ // 用于Docs的框架页面与资源</div><div class="line">├── _layouts/ // 用于Docs的典型页面</div><div class="line">├── _plugins/ // Ruby插件</div><div class="line">├── .github // github相关的说明：贡献、提issue</div><div class="line">├── assets // 用于Docs的资源文件：图片、css、js等</div><div class="line">├── build // 用于构建的各种配置与脚本</div><div class="line">├── dist // 打包出来的css，js；开发者使用的就是这部分</div><div class="line">├── docs // B4的说明文档</div><div class="line">├── js // js源码，贡献的地方</div><div class="line">├── nuget // [NuGet] 用于发布NuGet包</div><div class="line">├── scss // css源码，贡献的地方</div><div class="line">├── _config.yml [Jekyll] 配置</div><div class="line">├── .babelrc.js // [babel] babel配置</div><div class="line">├── .editorconfig.js // [EditorConfig] 用来帮助开发者在不同IDE下定义编码格式</div><div class="line">├── .eslintignore.js</div><div class="line">├── .gitattributes.js</div><div class="line">├── .gitignore.js</div><div class="line">├── .travis.yml // [Travis Ci] 测试配置</div><div class="line">├── CNAME // 解析用</div><div class="line">├── CODE_OF_CONDUCT.md // 项目相关的一系列规则，教义</div><div class="line">├── composer.json  // [PHP] 配置文件，依赖管理</div><div class="line">├── favicon.ico</div><div class="line">├── Gemfile // [Ruby] 定义Ruby项目的gem依赖</div><div class="line">├── Gemfile.lock</div><div class="line">├── index.html</div><div class="line">├── LICENSE // [OSI] 开源软件证明</div><div class="line">├── package-lock.json // [npm] 快照，用于明确各依赖的版本号</div><div class="line">├── package.js // [Meteor] 基本信息、用了哪些包</div><div class="line">├── package.json // [npm] 定义了项目所需模块，以及项目的配置信息（比如名称、版本、许可证等元数据）</div><div class="line">├── README.md // [gitHub] 用于项目简介</div><div class="line">├── robots.txt // [robotstxt] 用来告诉搜索引擎，哪些内容不应被搜获取，哪些内容可获取</div><div class="line">├── sache.json // [Sass] 做为Sass扩展和工具在Sache中心分享</div><div class="line">└── sw.js  // [Workbox] service worker用于离线运行、提升重复访问中的加载性能</div></pre></td></tr></table></figure>
+<p>了解了根目录下每个文件或者文件夹的用途后，我们可以把目录分为以下3类去学习：</p>
+<ul>
+<li>说明文档，assets、docs文件夹，_*文件夹；</li>
+<li>核心源码，scss、js文件夹</li>
+<li>构建配置，build文件夹以及配置文件等</li>
+</ul>
+<p>接下来我将先从最核心的源码开始进行学习和解读</p>
 
         </div>
         <footer class="article-footer">
@@ -193,7 +200,7 @@
 
 
 
-    <a data-url="http://liuyiqi123.github.io/2017/12/13/BootStrap4源码解读/" data-id="cjb58x9ip000re6t5hqxro1ca" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://liuyiqi123.github.io/2017/12/13/BootStrap4源码解读/" data-id="cjb6m7g83000aizt5yn1x40bb" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -362,6 +369,26 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2017/12/14/BootStrap4核心源码学习/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/ikle_bootstrap_icon.png)" alt="BootStrap4核心源码学习" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/front-end/">前端</a></p>
+                            <p class="item-title"><a href="/2017/12/14/BootStrap4核心源码学习/" class="title">BootStrap4核心源码学习</a></p>
+                            <p class="item-date"><time datetime="2017-12-14T14:51:22.000Z" itemprop="datePublished">2017-12-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2017/12/13/Run-Then-find-a-way-out/" class="thumbnail">
     
     
@@ -439,26 +466,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/11/27/2017年11月第四周/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/image/ikle_Control.jpeg)" alt="2017年11月第四周" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/思考/">思考</a></p>
-                            <p class="item-title"><a href="/2017/11/27/2017年11月第四周/" class="title">2017年11月第四周</a></p>
-                            <p class="item-date"><time datetime="2017-11-27T11:10:42.000Z" itemprop="datePublished">2017-11-27</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -468,7 +475,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/front-end/">前端</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/思考/">思考</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/travel/">旅行</a><span class="category-list-count">5</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/front-end/">前端</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/思考/">思考</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/travel/">旅行</a><span class="category-list-count">5</span></li></ul>
         </div>
     </div>
 
@@ -478,7 +485,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">3</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">3</span></li></ul>
         </div>
     </div>
 
@@ -488,7 +495,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/front-end/">front-end</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/life-thinking/">life thinking</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/travel/">travel</a><span class="tag-list-count">5</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BootStrap4/">BootStrap4</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/front-end/">front-end</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/life-thinking/">life thinking</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/travel/">travel</a><span class="tag-list-count">5</span></li></ul>
         </div>
     </div>
 
@@ -498,7 +505,7 @@
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/front-end/" style="font-size: 10px;">front-end</a> <a href="/tags/life-thinking/" style="font-size: 20px;">life thinking</a> <a href="/tags/travel/" style="font-size: 15px;">travel</a>
+            <a href="/tags/BootStrap4/" style="font-size: 10px;">BootStrap4</a> <a href="/tags/front-end/" style="font-size: 13.33px;">front-end</a> <a href="/tags/life-thinking/" style="font-size: 20px;">life thinking</a> <a href="/tags/travel/" style="font-size: 16.67px;">travel</a>
         </div>
     </div>
 
