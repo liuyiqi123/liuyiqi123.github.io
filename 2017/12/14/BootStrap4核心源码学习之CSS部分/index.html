@@ -8,18 +8,18 @@
     
         <meta name="keywords" content="front-end,BootStrap4" />
     
-    <meta name="description" content="Bootstrap 是全球最受欢迎的前端组件库，未读过不足以谈前端人生。   BootStrap4的核心源码，也就是我们在项目中常引用的bootstrap.min.css/bootstrap.min.js，主要来自bootstrap/scss和bootstrap/js，本篇解读css部分。 内容 scss目录说明 三大css文件  scss目录说明通过目录，我们来了解scss的放置规则，和引入关">
+    <meta name="description" content="Bootstrap 是全球最受欢迎的前端组件库，未读过不足以谈前端人生。   BootStrap4的核心源码，也就是我们在项目中常引用的bootstrap.min.css/bootstrap.min.js，主要来自bootstrap/scss和bootstrap/js，本篇解读css部分。 内容 scss目录说明 三大css文件 精选组件详解  scss目录说明通过目录，我们来了解scss的放置">
 <meta name="keywords" content="front-end,BootStrap4">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BootStrap4核心源码学习之CSS部分">
 <meta property="og:url" content="http://liuyiqi123.github.io/2017/12/14/BootStrap4核心源码学习之CSS部分/index.html">
 <meta property="og:site_name" content="Vk&#39;s blog">
-<meta property="og:description" content="Bootstrap 是全球最受欢迎的前端组件库，未读过不足以谈前端人生。   BootStrap4的核心源码，也就是我们在项目中常引用的bootstrap.min.css/bootstrap.min.js，主要来自bootstrap/scss和bootstrap/js，本篇解读css部分。 内容 scss目录说明 三大css文件  scss目录说明通过目录，我们来了解scss的放置规则，和引入关">
+<meta property="og:description" content="Bootstrap 是全球最受欢迎的前端组件库，未读过不足以谈前端人生。   BootStrap4的核心源码，也就是我们在项目中常引用的bootstrap.min.css/bootstrap.min.js，主要来自bootstrap/scss和bootstrap/js，本篇解读css部分。 内容 scss目录说明 三大css文件 精选组件详解  scss目录说明通过目录，我们来了解scss的放置">
 <meta property="og:image" content="http://liuyiqi123.github.io/image/ikle_bootstrap_icon.png">
-<meta property="og:updated_time" content="2018-01-01T07:20:48.857Z">
+<meta property="og:updated_time" content="2018-01-01T13:56:56.238Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BootStrap4核心源码学习之CSS部分">
-<meta name="twitter:description" content="Bootstrap 是全球最受欢迎的前端组件库，未读过不足以谈前端人生。   BootStrap4的核心源码，也就是我们在项目中常引用的bootstrap.min.css/bootstrap.min.js，主要来自bootstrap/scss和bootstrap/js，本篇解读css部分。 内容 scss目录说明 三大css文件  scss目录说明通过目录，我们来了解scss的放置规则，和引入关">
+<meta name="twitter:description" content="Bootstrap 是全球最受欢迎的前端组件库，未读过不足以谈前端人生。   BootStrap4的核心源码，也就是我们在项目中常引用的bootstrap.min.css/bootstrap.min.js，主要来自bootstrap/scss和bootstrap/js，本篇解读css部分。 内容 scss目录说明 三大css文件 精选组件详解  scss目录说明通过目录，我们来了解scss的放置">
 <meta name="twitter:image" content="http://liuyiqi123.github.io/image/ikle_bootstrap_icon.png">
     
 
@@ -172,11 +172,19 @@
 <h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><ul>
 <li><a href="#scss目录说明">scss目录说明</a></li>
 <li><a href="#三大css文件">三大css文件</a></li>
+<li><a href="#精选组件详解">精选组件详解</a></li>
 </ul>
 <h2 id="scss目录说明"><a href="#scss目录说明" class="headerlink" title="scss目录说明"></a>scss目录说明</h2><p>通过目录，我们来了解scss的放置规则，和引入关系。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">bootstrap/scss</div><div class="line">├── mixins/ // @mixin方法</div><div class="line">├── utilities/ // 全局样式</div><div class="line">├── _alert.scss // 警告-组件</div><div class="line">├── _badge.scss // 徽章-组件</div><div class="line">├── _breadcrumb.scss //面 包屑-组件</div><div class="line">├── _buttons-group.scss // 按钮组-组件</div><div class="line">├── _buttons.scss // 按钮-组件</div><div class="line">├── _card.scss // 卡片-组件</div><div class="line">├── _carousel.scss // 滚屏-组件</div><div class="line">├── _close.scss // 关闭-全局样式</div><div class="line">├── _code.scss // 代码-内容</div><div class="line">├── _custom-forms.scss // 表单_自定义表单-组件</div><div class="line">├── _dropdown.scss // 下拉菜单</div><div class="line">├── _forms.scss // 表单-组件</div><div class="line">├── _functions.scss // 公共方法</div><div class="line">├── _grid.scss // 栅格-布局</div><div class="line">├── _images.scss // 图片、图解-内容</div><div class="line">├── _input-group.scss // 输入类-组件</div><div class="line">├── _jumbotron.scss // 超大屏-组件</div><div class="line">├── _list-group.scss // 列表类-组件</div><div class="line">├── _media.scss // 媒体-布局</div><div class="line">├── _mixins.scss // 总的@mixin方法，，引用mixins目录下文件</div><div class="line">├── _modal.scss // 模态框-组件</div><div class="line">├── _nav.scss // 导航-组件</div><div class="line">├── _navbar.scss // 导航条-组件</div><div class="line">├── _pagination.scss // 分页-组件</div><div class="line">├── _popover.scss // 弹出框-组件</div><div class="line">├── _print.scss // 打印样式</div><div class="line">├── _progress.scss // 进度条-组件</div><div class="line">├── _reboot.scss // 初始化样式</div><div class="line">├── _root.scss // 基本颜色、屏幕断点</div><div class="line">├── _tables.scss // 表格-内容</div><div class="line">├── _tooltip.scss // 工具提示-组件</div><div class="line">├── _transitions.scss // 过渡效果：折叠，显示隐藏</div><div class="line">├── _type.scss // 排版-内容</div><div class="line">├── _utilities.scss // 总的全局样式，引用utilities目录下文件</div><div class="line">├── _variables.scss // 变量集合</div><div class="line">├── bootstrap-grid.scss //栅格CSS</div><div class="line">├── bootstrap-reboot.scss //启动CSS</div><div class="line">└── bootstrap.scss //完整css</div></pre></td></tr></table></figure>
 <p>新的文档主要分为5大类：布局、内容、组件、全局样式、扩展（图标）；<br>全局样式基本在<code>scss/utilities/</code>文件夹下，布局、内容、组件基本在<code>scss/</code>文件夹下，<br>新的Bootstrap4取消了字体图标，开发者可以引入扩展里推荐的图标库。</p>
 <h2 id="三大css文件"><a href="#三大css文件" class="headerlink" title="三大css文件"></a>三大css文件</h2><p>通过本节我们将了解打包出来用于生产的三大css文件由哪些部分组成，有哪些作用，它们之间有怎样的联系。</p>
+<ul>
+<li>如有自己的UI组件，仅使用布局选择<code>bootstrap-grid.scss</code> 包含：初始化（部分）、公共方法、变量、栅格相关mixins、栅格-布局、弹性布局-样式</li>
+<li>如果以文档为主，仅带基础内容选择<code>bootstrap-reboot.scss</code> 包含：公共方法、变量、mixins、reboot</li>
+<li>使用所有样式选择<code>bootstrap.scss</code> 包含：所有</li>
+</ul>
+<p><code>_functions.scss</code> : 公共方法：用于检测断点、表单中用到的SVG icons、颜色处理；<br><code>_variables.scss</code> : 变量：颜色、断点、行间距、栅格等等参数；<br><code>_mixins.scss</code> : 抽象类：从一些枯燥重复的CSS抽象出来的方法；<br><code>_reboot.scss</code>: CSS初始化：不同浏览器自带的默认样式不同，这样使浏览器尽可能统一，例如：Reset.css、Normalize.css</p>
+<h2 id="精选组件详解"><a href="#精选组件详解" class="headerlink" title="精选组件详解"></a>精选组件详解</h2><p>本节将挑选按钮、卡片两个组件，从oocss角度进行详细的解读</p>
 
         </div>
         <footer class="article-footer">
