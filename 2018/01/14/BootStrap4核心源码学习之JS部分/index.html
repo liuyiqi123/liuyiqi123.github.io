@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Vk&#39;s blog">
 <meta property="og:description" content="Bootstrap 是全球最受欢迎的前端组件库，未读过不足以谈前端人生。   BootStrap4的核心源码，也就是我们在项目中常引用的bootstrap.min.css/bootstrap.min.js，主要来自bootstrap/scss和bootstrap/js，本篇解读JS部分。 内容 js目录说明 精选组件详解 单元测试  js目录说明通过目录，我们来了解js的放置规则和涉及哪些内容。">
 <meta property="og:image" content="http://liuyiqi123.github.io/image/ikle_bootstrap_icon.png">
-<meta property="og:updated_time" content="2018-01-14T09:05:32.131Z">
+<meta property="og:updated_time" content="2018-01-14T15:09:21.967Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BootStrap4核心源码学习之JS部分">
 <meta name="twitter:description" content="Bootstrap 是全球最受欢迎的前端组件库，未读过不足以谈前端人生。   BootStrap4的核心源码，也就是我们在项目中常引用的bootstrap.min.css/bootstrap.min.js，主要来自bootstrap/scss和bootstrap/js，本篇解读JS部分。 内容 js目录说明 精选组件详解 单元测试  js目录说明通过目录，我们来了解js的放置规则和涉及哪些内容。">
@@ -175,8 +175,26 @@
 <li><a href="#单元测试">单元测试</a></li>
 </ul>
 <h2 id="js目录说明"><a href="#js目录说明" class="headerlink" title="js目录说明"></a>js目录说明</h2><p>通过目录，我们来了解js的放置规则和涉及哪些内容。</p>
-<h2 id="精选组件详解"><a href="#精选组件详解" class="headerlink" title="精选组件详解"></a>精选组件详解</h2><p>本节将挑选模态框组件进行解读。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">bootstrap/js</div><div class="line">├── dist/ // 通过babel打包将src中es6书写的各组件转es5</div><div class="line">├── src/ // es6书写的各组件</div><div class="line">│   ├── alert.js // 警告-组件</div><div class="line">│   ├── buttons.js // 按钮-组件</div><div class="line">│   ├── carousel.js // 滚屏-组件</div><div class="line">│   ├── collapse.js // 折叠-组件</div><div class="line">│   ├── dropdown.js // 下拉菜单-组件</div><div class="line">│   ├── index.js // Jquery及版本引入检测</div><div class="line">│   ├── modal.js // 模态框-组件</div><div class="line">│   ├── popover.js // 弹出框-组件</div><div class="line">│   ├── scrollspy.js // 滚动监听-组件</div><div class="line">│   ├── tab.js // 导航（选项卡）-组件</div><div class="line">│   ├── tooltip.js // 工具提示-组件</div><div class="line">│   └── util.js // 完成过度效果后的处理</div><div class="line">├── tests/ // 各组件对应的测试</div><div class="line">└── .eslintrc.json // eslint配置文件</div></pre></td></tr></table></figure>
+<p>从目录看主要分为4部分：</p>
+<ul>
+<li>dist文件夹：转换后的各组件文件；</li>
+<li>src文件夹：es6书写的各组件js源码，其中index.js、util.js为公共特殊用途，将在<a href="#精选组件详解">精选组件详解</a>章节将举例解读；</li>
+<li>tests文件夹：根据组件书写的测试用例，将在<a href="#单元测试">单元测试</a>章节细说；</li>
+<li>.eslintrc.json：eslint配置文件</li>
+</ul>
+<h2 id="精选组件详解"><a href="#精选组件详解" class="headerlink" title="精选组件详解"></a>精选组件详解</h2><p>本节将挑选模态框组件进行解读。<br>util.js:该模块使所有程序API方法异步执行，在过度效果开始后结束前回调，使得方法在过渡效果完成时执行；</p>
+<p>1.引入Jquery<code>$</code>方法，Util的<code>Util</code>对象；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">import $ from &apos;jquery&apos;</div><div class="line">import Util from &apos;./util&apos;</div></pre></td></tr></table></figure>
+<p>2.申明Modal方法，定义常量、数据集属性-对外option、事件Events、class名称、选择器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">const NAME\VERSION\DATA_KEY\EVENT_KEY...</div><div class="line"></div><div class="line">const Default = &#123;...</div><div class="line">&#125;</div><div class="line">const DefaultType = &#123;...</div><div class="line">&#125;</div><div class="line">const Event = &#123;...</div><div class="line">&#125;</div><div class="line">const ClassName = &#123;...</div><div class="line">&#125;</div><div class="line">const Selector = &#123;...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>3.申明类Class，来构造对象实例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">class Modal &#123;</div><div class="line">  // 构造实例使用的内部变量</div><div class="line">  // getters</div><div class="line">  // public：定义弹窗暴露给用户使用的方法</div><div class="line">  toggle()方法</div><div class="line">  show()方法</div><div class="line">  hide()方法</div><div class="line">  dispose()方法</div><div class="line">  handleUpdate()方法</div><div class="line">  // private：定义私有方法，private里的方法仅用于整个函数内部</div><div class="line">  附加：弹窗溢出的私有方法，未来可能会从modal.js提出</div><div class="line">  // static 静态函数</div><div class="line">  _jQueryInterface：将方法以Jquery形式输出，也就是$(document).modal(‘&#123;method&#125;’)</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p>4.API使用：对外暴露的事件Events，用于Modal实用性的钩子：show、shown、hide、hidden</p>
+<p>5.jQuery构造，命名空间冲突处理No conflict</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$.fn[NAME]             = Modal._jQueryInterface</div><div class="line">$.fn[NAME].Constructor = Modal</div><div class="line">$.fn[NAME].noConflict  = function () &#123;</div><div class="line">  $.fn[NAME] = JQUERY_NO_CONFLICT</div><div class="line">  return Modal._jQueryInterface</div><div class="line">&#125;</div><div class="line"></div><div class="line">return Modal</div></pre></td></tr></table></figure>
 <h2 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h2><p>本节将了解<code>bootstrap</code>架构中如何对js进行测试。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">bootstrap/js/tests</div><div class="line">├── unit/ //</div><div class="line">├── vendor/ //</div><div class="line">├── visual/ //</div><div class="line">├── .eslintrc.json // eslint配置文件</div><div class="line">├── index.html</div><div class="line">├── karma.conf.js</div><div class="line">└── README.md</div></pre></td></tr></table></figure>
 
         </div>
         <footer class="article-footer">
