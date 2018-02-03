@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Vk&#39;s blog">
 <meta property="og:description" content="Bootstrap 是全球最受欢迎的前端组件库，未读过不足以谈前端人生。   BootStrap4的核心源码，也就是我们在项目中常引用的bootstrap.min.css/bootstrap.min.js，主要来自bootstrap/scss和bootstrap/js，本篇解读JS部分。 内容 js目录说明 精选组件详解 单元测试  js目录说明通过目录，我们来了解js的放置规则和涉及哪些内容。">
 <meta property="og:image" content="http://liuyiqi123.github.io/image/ikle_bootstrap_icon.png">
-<meta property="og:updated_time" content="2018-01-14T15:09:21.967Z">
+<meta property="og:updated_time" content="2018-02-03T04:36:14.829Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BootStrap4核心源码学习之JS部分">
 <meta name="twitter:description" content="Bootstrap 是全球最受欢迎的前端组件库，未读过不足以谈前端人生。   BootStrap4的核心源码，也就是我们在项目中常引用的bootstrap.min.css/bootstrap.min.js，主要来自bootstrap/scss和bootstrap/js，本篇解读JS部分。 内容 js目录说明 精选组件详解 单元测试  js目录说明通过目录，我们来了解js的放置规则和涉及哪些内容。">
@@ -193,8 +193,9 @@
 <p>4.API使用：对外暴露的事件Events，用于Modal实用性的钩子：show、shown、hide、hidden</p>
 <p>5.jQuery构造，命名空间冲突处理No conflict</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$.fn[NAME]             = Modal._jQueryInterface</div><div class="line">$.fn[NAME].Constructor = Modal</div><div class="line">$.fn[NAME].noConflict  = function () &#123;</div><div class="line">  $.fn[NAME] = JQUERY_NO_CONFLICT</div><div class="line">  return Modal._jQueryInterface</div><div class="line">&#125;</div><div class="line"></div><div class="line">return Modal</div></pre></td></tr></table></figure>
-<h2 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h2><p>本节将了解<code>bootstrap</code>架构中如何对js进行测试。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">bootstrap/js/tests</div><div class="line">├── unit/ //</div><div class="line">├── vendor/ //</div><div class="line">├── visual/ //</div><div class="line">├── .eslintrc.json // eslint配置文件</div><div class="line">├── index.html</div><div class="line">├── karma.conf.js</div><div class="line">└── README.md</div></pre></td></tr></table></figure>
+<h2 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h2><p>本节将了解<code>bootstrap</code>架构中如何对js进行测试。通过阅读<code>README.md</code>文件了解目录结构、怎么增加单元测试、编码规范</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">bootstrap/js/tests</div><div class="line">├── unit/ // 各组件的单元测试</div><div class="line">├── vendor/ // 单元测试相关的第三方代码</div><div class="line">├── visual/ // 可视化测试：展现在真实浏览器中，需要人工测试</div><div class="line">├── .eslintrc.json // eslint配置文件</div><div class="line">├── index.html // 可视化的测试报告</div><div class="line">├── karma.conf.js //karma配置</div><div class="line">└── README.md</div></pre></td></tr></table></figure>
+<p>主要的测试框架是Qunit，同时涉及到karma(测试管理工具)、sourcelabs(浏览器环境云测试)，这样可以通过命令行测试，同时不用安装各个版本浏览器进行测试。</p>
 
         </div>
         <footer class="article-footer">
