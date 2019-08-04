@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     
     <title>阅读Vue文档 | Vk&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="front-end,Vue" />
+        <meta name="keywords" content="front-end,Vue">
     
     <meta name="description" content="Vue是目前前端流行的一套用于构建用户界面的渐进式框架。   Q:什么是渐进式框架？如上图，既可以仅用Vue的声明式渲染，也可以从视图渲染到构建系统都使用Vue来管理，丰俭由人(主张少)。 Q:怎么响应数据变化的？（响应原理）当数据变更时，会触发对象的set属性，Vue通过defineReactive方法重写对象的getter、setter函数，当newvalue与之前不一样时，重新渲染。注意，">
 <meta name="keywords" content="front-end,Vue">
@@ -15,6 +15,7 @@
 <meta property="og:url" content="http://liuyiqi123.github.io/2019/06/01/read-vue-doc/index.html">
 <meta property="og:site_name" content="Vk&#39;s blog">
 <meta property="og:description" content="Vue是目前前端流行的一套用于构建用户界面的渐进式框架。   Q:什么是渐进式框架？如上图，既可以仅用Vue的声明式渲染，也可以从视图渲染到构建系统都使用Vue来管理，丰俭由人(主张少)。 Q:怎么响应数据变化的？（响应原理）当数据变更时，会触发对象的set属性，Vue通过defineReactive方法重写对象的getter、setter函数，当newvalue与之前不一样时，重新渲染。注意，">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://liuyiqi123.github.io/image/ikle_vue_js.jpg">
 <meta property="og:updated_time" content="2019-07-22T04:07:32.422Z">
 <meta name="twitter:card" content="summary">
@@ -24,7 +25,7 @@
     
 
     
-        <link rel="alternate" href="/" title="Vk&#39;s blog" type="application/atom+xml" />
+        <link rel="alternate" href="/" title="Vk&#39;s blog" type="application/atom+xml">
     
 
     
@@ -47,7 +48,7 @@
     
 
 </head>
-
+</html>
 <body>
     <div id="wrap">
         <header id="header">
@@ -170,7 +171,7 @@
 <hr>
 <h6 id="Q-什么是渐进式框架？"><a href="#Q-什么是渐进式框架？" class="headerlink" title="Q:什么是渐进式框架？"></a>Q:什么是渐进式框架？</h6><p><img src="/image/ikle_vue_progressive.jpg" alt="渐进式"><br>如上图，既可以仅用Vue的声明式渲染，也可以从视图渲染到构建系统都使用Vue来管理，丰俭由人(主张少)。</p>
 <h6 id="Q-怎么响应数据变化的？（响应原理）"><a href="#Q-怎么响应数据变化的？（响应原理）" class="headerlink" title="Q:怎么响应数据变化的？（响应原理）"></a>Q:怎么响应数据变化的？（响应原理）</h6><p><img src="/image/ikle_vue_react.png" alt="数据与视图关系"><br>当数据变更时，会触发对象的set属性，Vue通过defineReactive方法重写对象的getter、setter函数，<br>当newvalue与之前不一样时，重新渲染。注意，Vue不能检测以下变动：索引值直接设置、修改数组的长度。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">set: function reactiveSetter (newVal) &#123;</div><div class="line">        var value = getter ? getter.call(obj) : val;</div><div class="line">        /* 如果新旧val一样return */</div><div class="line">        if (newVal === value || (newVal !== newVal &amp;&amp; value !== value)) &#123;</div><div class="line">          return</div><div class="line">        &#125;</div><div class="line">        /* 自定义set方法，如注入时直接修改的警告、更新子组件(isUpdatingChildComponent)或根元素(isRoot) */</div><div class="line">        if (customSetter) &#123;</div><div class="line">          customSetter();</div><div class="line">        &#125;</div><div class="line">        // #7981: for accessor properties without setter</div><div class="line">        if (getter &amp;&amp; !setter) &#123; return &#125;</div><div class="line">        if (setter) &#123;</div><div class="line">          setter.call(obj, newVal);</div><div class="line">        &#125; else &#123;</div><div class="line">          val = newVal;</div><div class="line">        &#125;</div><div class="line">        childOb = !shallow &amp;&amp; observe(newVal);</div><div class="line">        dep.notify();</div><div class="line">      &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">set: function reactiveSetter (newVal) &#123;</span><br><span class="line">        var value = getter ? getter.call(obj) : val;</span><br><span class="line">        /* 如果新旧val一样return */</span><br><span class="line">        if (newVal === value || (newVal !== newVal &amp;&amp; value !== value)) &#123;</span><br><span class="line">          return</span><br><span class="line">        &#125;</span><br><span class="line">        /* 自定义set方法，如注入时直接修改的警告、更新子组件(isUpdatingChildComponent)或根元素(isRoot) */</span><br><span class="line">        if (customSetter) &#123;</span><br><span class="line">          customSetter();</span><br><span class="line">        &#125;</span><br><span class="line">        // #7981: for accessor properties without setter</span><br><span class="line">        if (getter &amp;&amp; !setter) &#123; return &#125;</span><br><span class="line">        if (setter) &#123;</span><br><span class="line">          setter.call(obj, newVal);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">          val = newVal;</span><br><span class="line">        &#125;</span><br><span class="line">        childOb = !shallow &amp;&amp; observe(newVal);</span><br><span class="line">        dep.notify();</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
 <p>reactiveSetter–watcher.update–watcher.run–vm._render(render新的vnode)–vm._update（通过<strong>patch</strong>更新vnode）</p>
 <h6 id="Q-组件和指令有什么区别？"><a href="#Q-组件和指令有什么区别？" class="headerlink" title="Q:组件和指令有什么区别？"></a>Q:组件和指令有什么区别？</h6><p>指令例如v-xxx，以属性的形式接收参数进行dom操作，基于事件的处理；组件代表一个自给自足的独立单元——有自己的视图和数据逻辑，这个单元用来完成某种交互需求，组件的发展给前端开发提供了额外的抽象、组合能力。<br>从html标签角度来说，组件（可以理解为自定义标签）如果是个<img>标签,有src属性接收图片的URL地址，有alt属性设置可替换文本，那么指令就是一个属性（两者形式上也大致是这样）。</p>
 <h6 id="Q-运行时性能Vue相对angular如何提高的？"><a href="#Q-运行时性能Vue相对angular如何提高的？" class="headerlink" title="Q:运行时性能Vue相对angular如何提高的？"></a>Q:运行时性能Vue相对angular如何提高的？</h6><p>Vue的数据变化是独立触发的，即每个vm实例，数据变化-&gt;watcher检查、更新、渲染；<br>Angular的数据变化是是通过$digest，可能引起数据的变化-&gt;作用域内watcher检查、listener函数执行、更新；</p>
@@ -203,7 +204,7 @@
 <li>由于组件数据变化来源入口变得可能不止一个，数据流转方向易紊乱，若再缺乏“管制”手段，雪崩。(脏检查带来的性能问题)</li>
 </ol>
 <blockquote>
-<p><a href="https://www.zhihu.com/question/51907207" target="_blank" rel="external">Vue2.0 中，“渐进式框架”和“自底向上增量开发的设计”这两个概念是什么？</a><br><a href="https://www.cnblogs.com/CaseyWei/p/9580329.html" target="_blank" rel="external">vuejs数据响应原理</a><br><a href="https://www.sitepoint.com/understanding-angulars-apply-digest/" target="_blank" rel="external">Understanding Angular’s $apply() and $digest()</a><br><a href="https://www.zhihu.com/question/49964363" target="_blank" rel="external">单向数据绑定和双向数据绑定的优缺点，适合什么场景？</a></p>
+<p><a href="https://www.zhihu.com/question/51907207" target="_blank" rel="noopener">Vue2.0 中，“渐进式框架”和“自底向上增量开发的设计”这两个概念是什么？</a><br><a href="https://www.cnblogs.com/CaseyWei/p/9580329.html" target="_blank" rel="noopener">vuejs数据响应原理</a><br><a href="https://www.sitepoint.com/understanding-angulars-apply-digest/" target="_blank" rel="noopener">Understanding Angular’s $apply() and $digest()</a><br><a href="https://www.zhihu.com/question/49964363" target="_blank" rel="noopener">单向数据绑定和双向数据绑定的优缺点，适合什么场景？</a></p>
 </blockquote>
 
         </div>
@@ -212,7 +213,7 @@
 
 
 
-    <a data-url="http://liuyiqi123.github.io/2019/06/01/read-vue-doc/" data-id="cjye7w0p50000cg0gmrno7w5u" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://liuyiqi123.github.io/2019/06/01/read-vue-doc/" data-id="cjywi3gdv000njrjbop5tnnob" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -381,6 +382,26 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2019/07/30/Learning-Data-Structures/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/ikle_algorithm.png)" alt="学习数据结构与算法基本概念" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/front-end/">前端</a></p>
+                            <p class="item-title"><a href="/2019/07/30/Learning-Data-Structures/" class="title">学习数据结构与算法基本概念</a></p>
+                            <p class="item-date"><time datetime="2019-07-30T10:46:01.000Z" itemprop="datePublished">2019-07-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2019/06/21/DIY-a-LED-hardware/" class="thumbnail">
     
     
@@ -458,26 +479,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/12/13/BootStrap4源码解读/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/image/ikle_bootstrap_icon.png)" alt="BootStrap4源码解读" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/front-end/">前端</a></p>
-                            <p class="item-title"><a href="/2017/12/13/BootStrap4源码解读/" class="title">BootStrap4源码解读</a></p>
-                            <p class="item-date"><time datetime="2017-12-13T11:26:51.000Z" itemprop="datePublished">2017-12-13</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -487,7 +488,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/front-end/">前端</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/travel/">旅行</a><span class="category-list-count">3</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/front-end/">前端</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/travel/">旅行</a><span class="category-list-count">3</span></li></ul>
         </div>
     </div>
 
@@ -497,7 +498,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -507,7 +508,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BootStrap4/">BootStrap4</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/front-end/">front-end</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/travel/">travel</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/智能硬件/">智能硬件</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BootStrap4/">BootStrap4</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/front-end/">front-end</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/travel/">travel</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/智能硬件/">智能硬件</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -517,7 +518,7 @@
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/BootStrap4/" style="font-size: 15px;">BootStrap4</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/front-end/" style="font-size: 20px;">front-end</a> <a href="/tags/travel/" style="font-size: 15px;">travel</a> <a href="/tags/智能硬件/" style="font-size: 10px;">智能硬件</a>
+            <a href="/tags/BootStrap4/" style="font-size: 15px;">BootStrap4</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/front-end/" style="font-size: 20px;">front-end</a> <a href="/tags/travel/" style="font-size: 15px;">travel</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/智能硬件/" style="font-size: 10px;">智能硬件</a>
         </div>
     </div>
 

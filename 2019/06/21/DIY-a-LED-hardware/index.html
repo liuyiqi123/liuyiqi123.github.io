@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     
     <title>自己动手DIY一个LED | Vk&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="智能硬件,C++" />
+        <meta name="keywords" content="智能硬件,C++">
     
-    <meta name="description" content="想做一个DIY礼物，不小心入了坑。   因为受到DIY的启发，所以也去油管看了一些DIY的视频，如果只是按照原文做，也许自己会轻松很多，由于自作聪明认为自己会编程、还换了硬件，所以给自己挖了个不小的坑； 脑洞：做一个带提醒的时钟，手机发送信息，对方的LED就会接收到；脑洞分解：1. 参考原有服务写一个服务端；2. 做一个手机端App；3. 参考原有设计烧程序到硬件； 整个情况从拿来用变成自己造自">
+    <meta name="description" content="想做一个DIY礼物，不小心入了坑。   因为受到DIY的启发，所以也去油管看了一些DIY的视频，如果只是按照原文做，也许自己会轻松很多，由于自作聪明认为自己会编程、还换了硬件，所以给自己挖了个不小的坑； 脑洞：做一个带提醒的时钟，手机发送信息，对方的LED就会接收到；脑洞分解：1. 参考原有服务写一个服务端；2. 做一个手机端App；3. 参考原有设计烧程序到硬件； （整个情况从拿来用变成自己造">
 <meta name="keywords" content="智能硬件,C++">
 <meta property="og:type" content="article">
 <meta property="og:title" content="自己动手DIY一个LED">
 <meta property="og:url" content="http://liuyiqi123.github.io/2019/06/21/DIY-a-LED-hardware/index.html">
 <meta property="og:site_name" content="Vk&#39;s blog">
-<meta property="og:description" content="想做一个DIY礼物，不小心入了坑。   因为受到DIY的启发，所以也去油管看了一些DIY的视频，如果只是按照原文做，也许自己会轻松很多，由于自作聪明认为自己会编程、还换了硬件，所以给自己挖了个不小的坑； 脑洞：做一个带提醒的时钟，手机发送信息，对方的LED就会接收到；脑洞分解：1. 参考原有服务写一个服务端；2. 做一个手机端App；3. 参考原有设计烧程序到硬件； 整个情况从拿来用变成自己造自">
+<meta property="og:description" content="想做一个DIY礼物，不小心入了坑。   因为受到DIY的启发，所以也去油管看了一些DIY的视频，如果只是按照原文做，也许自己会轻松很多，由于自作聪明认为自己会编程、还换了硬件，所以给自己挖了个不小的坑； 脑洞：做一个带提醒的时钟，手机发送信息，对方的LED就会接收到；脑洞分解：1. 参考原有服务写一个服务端；2. 做一个手机端App；3. 参考原有设计烧程序到硬件； （整个情况从拿来用变成自己造">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://liuyiqi123.github.io/image/ikle_matrix.jpeg">
-<meta property="og:updated_time" content="2019-07-22T11:05:26.403Z">
+<meta property="og:updated_time" content="2019-07-30T10:52:18.103Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自己动手DIY一个LED">
-<meta name="twitter:description" content="想做一个DIY礼物，不小心入了坑。   因为受到DIY的启发，所以也去油管看了一些DIY的视频，如果只是按照原文做，也许自己会轻松很多，由于自作聪明认为自己会编程、还换了硬件，所以给自己挖了个不小的坑； 脑洞：做一个带提醒的时钟，手机发送信息，对方的LED就会接收到；脑洞分解：1. 参考原有服务写一个服务端；2. 做一个手机端App；3. 参考原有设计烧程序到硬件； 整个情况从拿来用变成自己造自">
+<meta name="twitter:description" content="想做一个DIY礼物，不小心入了坑。   因为受到DIY的启发，所以也去油管看了一些DIY的视频，如果只是按照原文做，也许自己会轻松很多，由于自作聪明认为自己会编程、还换了硬件，所以给自己挖了个不小的坑； 脑洞：做一个带提醒的时钟，手机发送信息，对方的LED就会接收到；脑洞分解：1. 参考原有服务写一个服务端；2. 做一个手机端App；3. 参考原有设计烧程序到硬件； （整个情况从拿来用变成自己造">
 <meta name="twitter:image" content="http://liuyiqi123.github.io/image/ikle_matrix.jpeg">
     
 
     
-        <link rel="alternate" href="/" title="Vk&#39;s blog" type="application/atom+xml" />
+        <link rel="alternate" href="/" title="Vk&#39;s blog" type="application/atom+xml">
     
 
     
@@ -47,7 +48,7 @@
     
 
 </head>
-
+</html>
 <body>
     <div id="wrap">
         <header id="header">
@@ -168,9 +169,9 @@
 <p>想做一个DIY礼物，不小心入了坑。</p>
 </blockquote>
 <hr>
-<p>因为受到DIY的启发，所以也去油管看了一些DIY的视频，如果只是按照原文做，也许自己会轻松很多，<br>由于自作聪明认为自己会编程、还换了硬件，所以给自己挖了个不小的坑；</p>
+<p>因为受到DIY的启发，所以也去油管看了一些DIY的视频，如果只是按照原文做，也许自己会轻松很多，由于自作聪明认为自己会编程、还换了硬件，所以给自己挖了个不小的坑；</p>
 <p>脑洞：做一个带提醒的时钟，手机发送信息，对方的LED就会接收到；<br>脑洞分解：1. 参考原有服务写一个服务端；2. 做一个手机端App；3. 参考原有设计烧程序到硬件；</p>
-<p>整个情况从拿来用变成自己造自行车；</p>
+<p>（整个情况从拿来用变成自己造自行车）</p>
 <p><img src="/image/ikle_led_clock.gif" alt="电子钟功能演示含天气"></p>
 <h2 id="设备"><a href="#设备" class="headerlink" title="设备"></a>设备</h2><ul>
 <li>WIFI模块开发板 (ESP8266-12E)</li>
@@ -178,16 +179,17 @@
 <li>杜邦线公对公</li>
 <li>micro usb 线</li>
 </ul>
-<h2 id="客户端固件刷写"><a href="#客户端固件刷写" class="headerlink" title="客户端固件刷写"></a>客户端固件刷写</h2><p>由于换了显示屏，原客户端刷入后，屏幕乱码，模块高热；<br>策略：<br>v1.0 删掉功能，更换显示屏的模块代码，完成显示问题（Max72xxPanel）<br>v2.0 搭建原服务端，测试可用功能（时钟滚动显示，不能固定显示）<br>v3.0 新服务器搭建，完成clock功能；</p>
+<h2 id="客户端固件刷写"><a href="#客户端固件刷写" class="headerlink" title="客户端固件刷写"></a>客户端固件刷写</h2><p>由于换了显示屏，原客户端刷入后，屏幕乱码，模块高热；<br>解决思路：<br>查找对应型号的led模块包引入，书写显示、清屏、定屏幕</p>
+<p>版本计划：<br>v1.0 删掉功能，更换显示屏的模块代码，完成显示问题（Max72xxPanel）<br>v2.0 搭建原服务端，测试可用功能（时钟滚动显示，不能固定显示）<br>v3.0 新服务器搭建，完成clock功能；</p>
 <p>遗留问题：</p>
 <ol>
 <li>屏幕方法（清理屏幕、固定显示）需研究重写 Done；</li>
-<li>自建服务，需研究MQTT通信调节（paho，mosqitto）Done;</li>
-<li>后端搭建，需研究,计划使用C# Done;</li>
+<li>自建服务，需研究MQTT通信调节（mosqitto）Done;</li>
+<li>后端搭建，NodeJS service，PM2运行 Done;</li>
 <li>ReactNative APP搭建 进行中;</li>
 </ol>
 <blockquote>
-<p><a href="https://www.youtube.com/watch?v=K__jOpW_dzU" target="_blank" rel="external">ESP Matrix - Smart Clock ESP8266</a><br><a href="https://docs.blueforcer.de/#/v2/" target="_blank" rel="external">AWTRIX 2.0 (AWesome maTRIX) is an DIY intelligent clock</a><br><a href="https://sspai.com/post/54225" target="_blank" rel="external">如何制作一个 WIFI 像素时钟，只要Lametric十分之一的价格</a></p>
+<p><a href="https://www.youtube.com/watch?v=K__jOpW_dzU" target="_blank" rel="noopener">ESP Matrix - Smart Clock ESP8266</a><br><a href="https://docs.blueforcer.de/#/v2/" target="_blank" rel="noopener">AWTRIX 2.0 (AWesome maTRIX) is an DIY intelligent clock</a><br><a href="https://sspai.com/post/54225" target="_blank" rel="noopener">如何制作一个 WIFI 像素时钟，只要Lametric十分之一的价格</a></p>
 </blockquote>
 
         </div>
@@ -196,7 +198,7 @@
 
 
 
-    <a data-url="http://liuyiqi123.github.io/2019/06/21/DIY-a-LED-hardware/" data-id="cjye7em4i0022c30gdx134kk2" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://liuyiqi123.github.io/2019/06/21/DIY-a-LED-hardware/" data-id="cjywi3gdb0000jrjb834kg0it" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -333,6 +335,16 @@
         
 <nav id="article-nav">
     
+        <a href="/2019/07/30/Learning-Data-Structures/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            学习数据结构与算法基本概念
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
     
         <a href="/2019/06/01/read-vue-doc/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
@@ -351,6 +363,26 @@
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/07/30/Learning-Data-Structures/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/ikle_algorithm.png)" alt="学习数据结构与算法基本概念" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/front-end/">前端</a></p>
+                            <p class="item-title"><a href="/2019/07/30/Learning-Data-Structures/" class="title">学习数据结构与算法基本概念</a></p>
+                            <p class="item-date"><time datetime="2019-07-30T10:46:01.000Z" itemprop="datePublished">2019-07-30</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -432,26 +464,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/12/13/BootStrap4源码解读/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/image/ikle_bootstrap_icon.png)" alt="BootStrap4源码解读" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/front-end/">前端</a></p>
-                            <p class="item-title"><a href="/2017/12/13/BootStrap4源码解读/" class="title">BootStrap4源码解读</a></p>
-                            <p class="item-date"><time datetime="2017-12-13T11:26:51.000Z" itemprop="datePublished">2017-12-13</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -461,7 +473,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/front-end/">前端</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/travel/">旅行</a><span class="category-list-count">3</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/front-end/">前端</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/travel/">旅行</a><span class="category-list-count">3</span></li></ul>
         </div>
     </div>
 
@@ -471,7 +483,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -481,7 +493,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BootStrap4/">BootStrap4</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/front-end/">front-end</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/travel/">travel</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/智能硬件/">智能硬件</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BootStrap4/">BootStrap4</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/front-end/">front-end</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/travel/">travel</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/智能硬件/">智能硬件</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -491,7 +503,7 @@
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/BootStrap4/" style="font-size: 15px;">BootStrap4</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/front-end/" style="font-size: 20px;">front-end</a> <a href="/tags/travel/" style="font-size: 15px;">travel</a> <a href="/tags/智能硬件/" style="font-size: 10px;">智能硬件</a>
+            <a href="/tags/BootStrap4/" style="font-size: 15px;">BootStrap4</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/front-end/" style="font-size: 20px;">front-end</a> <a href="/tags/travel/" style="font-size: 15px;">travel</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/智能硬件/" style="font-size: 10px;">智能硬件</a>
         </div>
     </div>
 

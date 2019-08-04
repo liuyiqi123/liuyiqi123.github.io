@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     
     <title>BootStrap4核心源码学习之JS部分 | Vk&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="front-end,BootStrap4" />
+        <meta name="keywords" content="front-end,BootStrap4">
     
     <meta name="description" content="Bootstrap 是全球最受欢迎的前端组件库，未读过不足以谈前端人生。   BootStrap4的核心源码，也就是我们在项目中常引用的bootstrap.min.css/bootstrap.min.js，主要来自bootstrap/scss和bootstrap/js，本篇解读JS部分。 内容 js目录说明 精选组件详解 单元测试  js目录说明通过目录，我们来了解js的放置规则和涉及哪些内容。">
 <meta name="keywords" content="front-end,BootStrap4">
@@ -15,6 +15,7 @@
 <meta property="og:url" content="http://liuyiqi123.github.io/2018/01/14/BootStrap4核心源码学习之JS部分/index.html">
 <meta property="og:site_name" content="Vk&#39;s blog">
 <meta property="og:description" content="Bootstrap 是全球最受欢迎的前端组件库，未读过不足以谈前端人生。   BootStrap4的核心源码，也就是我们在项目中常引用的bootstrap.min.css/bootstrap.min.js，主要来自bootstrap/scss和bootstrap/js，本篇解读JS部分。 内容 js目录说明 精选组件详解 单元测试  js目录说明通过目录，我们来了解js的放置规则和涉及哪些内容。">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://liuyiqi123.github.io/image/ikle_bootstrap_icon.png">
 <meta property="og:updated_time" content="2018-02-03T04:36:14.000Z">
 <meta name="twitter:card" content="summary">
@@ -24,7 +25,7 @@
     
 
     
-        <link rel="alternate" href="/" title="Vk&#39;s blog" type="application/atom+xml" />
+        <link rel="alternate" href="/" title="Vk&#39;s blog" type="application/atom+xml">
     
 
     
@@ -47,7 +48,7 @@
     
 
 </head>
-
+</html>
 <body>
     <div id="wrap">
         <header id="header">
@@ -175,7 +176,7 @@
 <li><a href="#单元测试">单元测试</a></li>
 </ul>
 <h2 id="js目录说明"><a href="#js目录说明" class="headerlink" title="js目录说明"></a>js目录说明</h2><p>通过目录，我们来了解js的放置规则和涉及哪些内容。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">bootstrap/js</div><div class="line">├── dist/ // 通过babel打包将src中es6书写的各组件转es5</div><div class="line">├── src/ // es6书写的各组件</div><div class="line">│   ├── alert.js // 警告-组件</div><div class="line">│   ├── buttons.js // 按钮-组件</div><div class="line">│   ├── carousel.js // 滚屏-组件</div><div class="line">│   ├── collapse.js // 折叠-组件</div><div class="line">│   ├── dropdown.js // 下拉菜单-组件</div><div class="line">│   ├── index.js // Jquery及版本引入检测</div><div class="line">│   ├── modal.js // 模态框-组件</div><div class="line">│   ├── popover.js // 弹出框-组件</div><div class="line">│   ├── scrollspy.js // 滚动监听-组件</div><div class="line">│   ├── tab.js // 导航（选项卡）-组件</div><div class="line">│   ├── tooltip.js // 工具提示-组件</div><div class="line">│   └── util.js // 完成过度效果后的处理</div><div class="line">├── tests/ // 各组件对应的测试</div><div class="line">└── .eslintrc.json // eslint配置文件</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">bootstrap/js</span><br><span class="line">├── dist/ // 通过babel打包将src中es6书写的各组件转es5</span><br><span class="line">├── src/ // es6书写的各组件</span><br><span class="line">│   ├── alert.js // 警告-组件</span><br><span class="line">│   ├── buttons.js // 按钮-组件</span><br><span class="line">│   ├── carousel.js // 滚屏-组件</span><br><span class="line">│   ├── collapse.js // 折叠-组件</span><br><span class="line">│   ├── dropdown.js // 下拉菜单-组件</span><br><span class="line">│   ├── index.js // Jquery及版本引入检测</span><br><span class="line">│   ├── modal.js // 模态框-组件</span><br><span class="line">│   ├── popover.js // 弹出框-组件</span><br><span class="line">│   ├── scrollspy.js // 滚动监听-组件</span><br><span class="line">│   ├── tab.js // 导航（选项卡）-组件</span><br><span class="line">│   ├── tooltip.js // 工具提示-组件</span><br><span class="line">│   └── util.js // 完成过度效果后的处理</span><br><span class="line">├── tests/ // 各组件对应的测试</span><br><span class="line">└── .eslintrc.json // eslint配置文件</span><br></pre></td></tr></table></figure>
 <p>从目录看主要分为4部分：</p>
 <ul>
 <li>dist文件夹：转换后的各组件文件；</li>
@@ -185,16 +186,16 @@
 </ul>
 <h2 id="精选组件详解"><a href="#精选组件详解" class="headerlink" title="精选组件详解"></a>精选组件详解</h2><p>本节将挑选模态框组件进行解读。<br>util.js:该模块使所有程序API方法异步执行，在过度效果开始后结束前回调，使得方法在过渡效果完成时执行；</p>
 <p>1.引入Jquery<code>$</code>方法，Util的<code>Util</code>对象；</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">import $ from &apos;jquery&apos;</div><div class="line">import Util from &apos;./util&apos;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import $ from &apos;jquery&apos;</span><br><span class="line">import Util from &apos;./util&apos;</span><br></pre></td></tr></table></figure>
 <p>2.申明Modal方法，定义常量、数据集属性-对外option、事件Events、class名称、选择器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">const NAME\VERSION\DATA_KEY\EVENT_KEY...</div><div class="line"></div><div class="line">const Default = &#123;...</div><div class="line">&#125;</div><div class="line">const DefaultType = &#123;...</div><div class="line">&#125;</div><div class="line">const Event = &#123;...</div><div class="line">&#125;</div><div class="line">const ClassName = &#123;...</div><div class="line">&#125;</div><div class="line">const Selector = &#123;...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">const NAME\VERSION\DATA_KEY\EVENT_KEY...</span><br><span class="line"></span><br><span class="line">const Default = &#123;...</span><br><span class="line">&#125;</span><br><span class="line">const DefaultType = &#123;...</span><br><span class="line">&#125;</span><br><span class="line">const Event = &#123;...</span><br><span class="line">&#125;</span><br><span class="line">const ClassName = &#123;...</span><br><span class="line">&#125;</span><br><span class="line">const Selector = &#123;...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>3.申明类Class，来构造对象实例</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">class Modal &#123;</div><div class="line">  // 构造实例使用的内部变量</div><div class="line">  // getters</div><div class="line">  // public：定义弹窗暴露给用户使用的方法</div><div class="line">  toggle()方法</div><div class="line">  show()方法</div><div class="line">  hide()方法</div><div class="line">  dispose()方法</div><div class="line">  handleUpdate()方法</div><div class="line">  // private：定义私有方法，private里的方法仅用于整个函数内部</div><div class="line">  附加：弹窗溢出的私有方法，未来可能会从modal.js提出</div><div class="line">  // static 静态函数</div><div class="line">  _jQueryInterface：将方法以Jquery形式输出，也就是$(document).modal(‘&#123;method&#125;’)</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Modal &#123;</span><br><span class="line">  // 构造实例使用的内部变量</span><br><span class="line">  // getters</span><br><span class="line">  // public：定义弹窗暴露给用户使用的方法</span><br><span class="line">  toggle()方法</span><br><span class="line">  show()方法</span><br><span class="line">  hide()方法</span><br><span class="line">  dispose()方法</span><br><span class="line">  handleUpdate()方法</span><br><span class="line">  // private：定义私有方法，private里的方法仅用于整个函数内部</span><br><span class="line">  附加：弹窗溢出的私有方法，未来可能会从modal.js提出</span><br><span class="line">  // static 静态函数</span><br><span class="line">  _jQueryInterface：将方法以Jquery形式输出，也就是$(document).modal(‘&#123;method&#125;’)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 <p>4.API使用：对外暴露的事件Events，用于Modal实用性的钩子：show、shown、hide、hidden</p>
 <p>5.jQuery构造，命名空间冲突处理No conflict</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$.fn[NAME]             = Modal._jQueryInterface</div><div class="line">$.fn[NAME].Constructor = Modal</div><div class="line">$.fn[NAME].noConflict  = function () &#123;</div><div class="line">  $.fn[NAME] = JQUERY_NO_CONFLICT</div><div class="line">  return Modal._jQueryInterface</div><div class="line">&#125;</div><div class="line"></div><div class="line">return Modal</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$.fn[NAME]             = Modal._jQueryInterface</span><br><span class="line">$.fn[NAME].Constructor = Modal</span><br><span class="line">$.fn[NAME].noConflict  = function () &#123;</span><br><span class="line">  $.fn[NAME] = JQUERY_NO_CONFLICT</span><br><span class="line">  return Modal._jQueryInterface</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">return Modal</span><br></pre></td></tr></table></figure>
 <h2 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h2><p>本节将了解<code>bootstrap</code>架构中如何对js进行测试。通过阅读<code>README.md</code>文件了解目录结构、怎么增加单元测试、编码规范</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">bootstrap/js/tests</div><div class="line">├── unit/ // 各组件的单元测试</div><div class="line">├── vendor/ // 单元测试相关的第三方代码</div><div class="line">├── visual/ // 可视化测试：展现在真实浏览器中，需要人工测试</div><div class="line">├── .eslintrc.json // eslint配置文件</div><div class="line">├── index.html // 可视化的测试报告</div><div class="line">├── karma.conf.js //karma配置</div><div class="line">└── README.md</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">bootstrap/js/tests</span><br><span class="line">├── unit/ // 各组件的单元测试</span><br><span class="line">├── vendor/ // 单元测试相关的第三方代码</span><br><span class="line">├── visual/ // 可视化测试：展现在真实浏览器中，需要人工测试</span><br><span class="line">├── .eslintrc.json // eslint配置文件</span><br><span class="line">├── index.html // 可视化的测试报告</span><br><span class="line">├── karma.conf.js //karma配置</span><br><span class="line">└── README.md</span><br></pre></td></tr></table></figure>
 <p>主要的测试框架是Qunit，同时涉及到karma(测试管理工具)、sourcelabs(浏览器环境云测试)，这样可以通过命令行测试，同时不用安装各个版本浏览器进行测试。</p>
 
         </div>
@@ -203,7 +204,7 @@
 
 
 
-    <a data-url="http://liuyiqi123.github.io/2018/01/14/BootStrap4核心源码学习之JS部分/" data-id="cjye7em4g001wc30gvgp0lqf9" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://liuyiqi123.github.io/2018/01/14/BootStrap4核心源码学习之JS部分/" data-id="cjywi3gdj0004jrjbj108285g" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -372,6 +373,26 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2019/07/30/Learning-Data-Structures/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/ikle_algorithm.png)" alt="学习数据结构与算法基本概念" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/front-end/">前端</a></p>
+                            <p class="item-title"><a href="/2019/07/30/Learning-Data-Structures/" class="title">学习数据结构与算法基本概念</a></p>
+                            <p class="item-date"><time datetime="2019-07-30T10:46:01.000Z" itemprop="datePublished">2019-07-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2019/06/21/DIY-a-LED-hardware/" class="thumbnail">
     
     
@@ -449,26 +470,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/12/13/BootStrap4源码解读/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/image/ikle_bootstrap_icon.png)" alt="BootStrap4源码解读" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/front-end/">前端</a></p>
-                            <p class="item-title"><a href="/2017/12/13/BootStrap4源码解读/" class="title">BootStrap4源码解读</a></p>
-                            <p class="item-date"><time datetime="2017-12-13T11:26:51.000Z" itemprop="datePublished">2017-12-13</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -478,7 +479,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/front-end/">前端</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/travel/">旅行</a><span class="category-list-count">3</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/front-end/">前端</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/travel/">旅行</a><span class="category-list-count">3</span></li></ul>
         </div>
     </div>
 
@@ -488,7 +489,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -498,7 +499,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BootStrap4/">BootStrap4</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/front-end/">front-end</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/travel/">travel</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/智能硬件/">智能硬件</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BootStrap4/">BootStrap4</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/front-end/">front-end</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/travel/">travel</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/智能硬件/">智能硬件</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -508,7 +509,7 @@
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/BootStrap4/" style="font-size: 15px;">BootStrap4</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/front-end/" style="font-size: 20px;">front-end</a> <a href="/tags/travel/" style="font-size: 15px;">travel</a> <a href="/tags/智能硬件/" style="font-size: 10px;">智能硬件</a>
+            <a href="/tags/BootStrap4/" style="font-size: 15px;">BootStrap4</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/front-end/" style="font-size: 20px;">front-end</a> <a href="/tags/travel/" style="font-size: 15px;">travel</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/智能硬件/" style="font-size: 10px;">智能硬件</a>
         </div>
     </div>
 
