@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    <title>前端架构设计 | Vk&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="前端架构设计">
+    
+    <meta name="description" content="学习规则、规范，是为了有通用语言   前端架构是一系列工具和流程的集合，旨在提升前端代码的质量，并实现高效、可持续的工作流它包括：体系设计、工作规划、监督跟进 迈卡·高保特 (Micah Godbolt). 前端架构设计 (图灵程序设计丛书) (Chinese Edition) Alpha项目模块化内容、全面测试、流式处理、详细的文档四个核心：代码、流程、测试、文档 代码HTML程序式标记、静">
+<meta name="keywords" content="前端架构设计">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端架构设计">
+<meta property="og:url" content="http://liuyiqi123.github.io/2019/08/05/front-end-architecture-design/index.html">
+<meta property="og:site_name" content="Vk&#39;s blog">
+<meta property="og:description" content="学习规则、规范，是为了有通用语言   前端架构是一系列工具和流程的集合，旨在提升前端代码的质量，并实现高效、可持续的工作流它包括：体系设计、工作规划、监督跟进 迈卡·高保特 (Micah Godbolt). 前端架构设计 (图灵程序设计丛书) (Chinese Edition) Alpha项目模块化内容、全面测试、流式处理、详细的文档四个核心：代码、流程、测试、文档 代码HTML程序式标记、静">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://liuyiqi123.github.io/image/ikle_arc.png">
+<meta property="og:updated_time" content="2019-10-07T12:41:02.562Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端架构设计">
+<meta name="twitter:description" content="学习规则、规范，是为了有通用语言   前端架构是一系列工具和流程的集合，旨在提升前端代码的质量，并实现高效、可持续的工作流它包括：体系设计、工作规划、监督跟进 迈卡·高保特 (Micah Godbolt). 前端架构设计 (图灵程序设计丛书) (Chinese Edition) Alpha项目模块化内容、全面测试、流式处理、详细的文档四个核心：代码、流程、测试、文档 代码HTML程序式标记、静">
+<meta name="twitter:image" content="http://liuyiqi123.github.io/image/ikle_arc.png">
+    
+
+    
+        <link rel="alternate" href="/" title="Vk&#39;s blog" type="application/atom+xml">
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">travel | life thinking | front-end “顺不浪 逆不怨 爱生活”</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/front-end/">前端</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/travel/">旅行</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/life-thinking/">生活</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/front-end/">前端</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-front-end-architecture-design" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        前端架构设计
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/08/05/front-end-architecture-design/" class="article-date">
+            <time datetime="2019-08-05T13:06:34.000Z" itemprop="datePublished">2019-08-05</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/前端架构设计/">前端架构设计</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="/image/ikle_arc.png" alt="UML"></p>
+<blockquote>
+<p>学习规则、规范，是为了有通用语言</p>
+<hr>
+</blockquote>
+<p>前端架构是一系列工具和流程的集合，旨在提升前端代码的质量，并实现高效、可持续的工作流<br>它包括：体系设计、工作规划、监督跟进</p>
+<p>迈卡·高保特 (Micah Godbolt). 前端架构设计 (图灵程序设计丛书) (Chinese Edition)</p>
+<h2 id="Alpha项目"><a href="#Alpha项目" class="headerlink" title="Alpha项目"></a>Alpha项目</h2><p>模块化内容、全面测试、流式处理、详细的文档<br>四个核心：代码、流程、测试、文档</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h4 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h4><p>程序式标记、静态标记-&gt;模块化标记<br>OOCSS：分离结构和外观；分离容器和内容<br>SMACSS：基础、布局、模块、状态、主题<br>BEM方法：块名_元素–修饰符</p>
+<h4 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h4><p>选择器优先级、颜色重置、位置依赖、多重继承、深层嵌套<br>容器与内容分离、区分布局与组件的角色和职责、扁平选择器<br>单一样式来源、组件修饰符</p>
+<h4 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h4><p>保持代码整洁：jshint<br>创造可复用的函数</p>
+<h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><p>工作流：需求-&gt;原型设计-&gt;开发<br>工具、本地部署、编写用户故事</p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>单元测试：单元、更多重用、更好的测试、TDD、覆盖率<br>性能测试：<br>性能测试衡量的是影响用户使用网站的流畅程度的关键指标，包括页面大小、请求数量、首字节时间（timetofirstbyte，TTFB）、加载时间和滚动性能</p>
+<h4 id="原始指标"><a href="#原始指标" class="headerlink" title="原始指标"></a>原始指标</h4><p>页面大小：图片、自定义字体、js框架插件<br>HTTP请求</p>
+<h4 id="计时度量"><a href="#计时度量" class="headerlink" title="计时度量"></a>计时度量</h4><p>首字节时间、开始渲染时间、文档完成时间</p>
+<h4 id="混合度量标准"><a href="#混合度量标准" class="headerlink" title="混合度量标准"></a>混合度量标准</h4><p><a href="https://developers.google.com/speed/pagespeed/insights/" target="_blank" rel="noopener">PageSpeed</a><br><a href="https://sites.google.com/a/webpagetest.org/docs/usingwebpagetest/metrics/speedindex" target="_blank" rel="noopener">SpeedIndex</a><br><a href="http://www.webpagetest.org/" target="_blank" rel="noopener">WebPageTest</a><br>Grunt:PageSpeed插件、Perfbuget插件</p>
+<h4 id="视觉还原测试"><a href="#视觉还原测试" class="headerlink" title="视觉还原测试"></a>视觉还原测试</h4><p>Wraith（<a href="https://github.com/BBCNews/wraith）" target="_blank" rel="noopener">https://github.com/BBCNews/wraith）</a><br>BackstopJS（<a href="https://github.com/garris/BackstopJS）" target="_blank" rel="noopener">https://github.com/garris/BackstopJS）</a><br>Quixote（<a href="https://github.com/jamesshore/quixote）" target="_blank" rel="noopener">https://github.com/jamesshore/quixote）</a><br>Gemini（<a href="https://github.com/geminitesting/gemini）" target="_blank" rel="noopener">https://github.com/geminitesting/gemini）</a><br>CasperJS（<a href="http://casperjs.org/）" target="_blank" rel="noopener">http://casperjs.org/）</a><br>Diffux项目（<a href="https://github.com/diffux/diffux）" target="_blank" rel="noopener">https://github.com/diffux/diffux）</a><br>PhantomCSS（<a href="https://github.com/Huddle/PhantomCSS）" target="_blank" rel="noopener">https://github.com/Huddle/PhantomCSS）</a></p>
+<h2 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h2><p>静态文档：<br>Hologram（<a href="https://github.com/trulia/hologram）" target="_blank" rel="noopener">https://github.com/trulia/hologram）</a><br>SassDoc（<a href="http://sassdoc.com/）" target="_blank" rel="noopener">http://sassdoc.com/）</a><br>代码驱动的文档：<br>PatternLab</p>
+<h2 id="曾经工作中的积累和经验"><a href="#曾经工作中的积累和经验" class="headerlink" title="曾经工作中的积累和经验"></a>曾经工作中的积累和经验</h2><ul>
+<li>总结代码提交流程<br>流程化，提前发现问题；</li>
+<li>推动gulp打包工具的运用<br>压缩、合并等，以及其他一些自动话处理的工作，例如autoprefix；  </li>
+<li>proxy代理模式开发<br>解决重构版本本地开发调试的问题</li>
+<li>根据API的特点封装了ajax</li>
+<li>编码风格<br>css/js/html的风格文档、eslint配置</li>
+<li>引入前端测试框架karma<br>关于代码覆盖率没必要绝对追求，适用于底层方法</li>
+<li>引入BS4，并对IE8兼容进行适配<br>主要处理flex布局，以及ie9以上属性；</li>
+<li>过多的自定义组件带来的质量风险</li>
+<li>代码检视人的不足</li>
+</ul>
+<blockquote>
+<p><a href="https://book.douban.com/subject/27019706/" target="_blank" rel="noopener">迈卡·高保特 (Micah Godbolt). 前端架构设计 (图灵程序设计丛书) (Chinese Edition)</a></p>
+</blockquote>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://liuyiqi123.github.io/2019/08/05/front-end-architecture-design/" data-id="ck4lfo7x4000995slee15l3b5" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/liuyiqi123/liuyiqi123.github.io" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/09/21/resigned-for-7-months/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            裸辞的7个月
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/07/30/Learning-Data-Structures/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">学习数据结构与算法基本概念</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/12/25/graph-of-Amida-kuji/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/ikle_Amida_graph.jpeg)" alt="做了一个鬼脚图生成器" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/front-end/">前端</a></p>
+                            <p class="item-title"><a href="/2019/12/25/graph-of-Amida-kuji/" class="title">做了一个鬼脚图生成器</a></p>
+                            <p class="item-date"><time datetime="2019-12-25T14:30:26.000Z" itemprop="datePublished">2019-12-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/09/21/resigned-for-7-months/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/ikle_book_store.jpg)" alt="裸辞的7个月" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/life-thinking/">生活</a></p>
+                            <p class="item-title"><a href="/2019/09/21/resigned-for-7-months/" class="title">裸辞的7个月</a></p>
+                            <p class="item-date"><time datetime="2019-09-21T00:48:34.000Z" itemprop="datePublished">2019-09-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/08/05/front-end-architecture-design/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/ikle_arc.png)" alt="前端架构设计" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/front-end/">前端</a></p>
+                            <p class="item-title"><a href="/2019/08/05/front-end-architecture-design/" class="title">前端架构设计</a></p>
+                            <p class="item-date"><time datetime="2019-08-05T13:06:34.000Z" itemprop="datePublished">2019-08-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/07/30/Learning-Data-Structures/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/ikle_algorithm.png)" alt="学习数据结构与算法基本概念" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/front-end/">前端</a></p>
+                            <p class="item-title"><a href="/2019/07/30/Learning-Data-Structures/" class="title">学习数据结构与算法基本概念</a></p>
+                            <p class="item-date"><time datetime="2019-07-30T10:46:01.000Z" itemprop="datePublished">2019-07-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/06/21/DIY-a-LED-hardware/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/ikle_matrix.jpeg)" alt="自己动手DIY一个LED" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/front-end/">前端</a></p>
+                            <p class="item-title"><a href="/2019/06/21/DIY-a-LED-hardware/" class="title">自己动手DIY一个LED</a></p>
+                            <p class="item-date"><time datetime="2019-06-21T12:34:48.000Z" itemprop="datePublished">2019-06-21</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/front-end/">前端</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/travel/">旅行</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/life-thinking/">生活</a><span class="category-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BootStrap4/">BootStrap4</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/front-end/">front-end</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/life-thinking/">life thinking</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/travel/">travel</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端架构设计/">前端架构设计</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/智能硬件/">智能硬件</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/程序员日常/">程序员日常</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/BootStrap4/" style="font-size: 15px;">BootStrap4</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/front-end/" style="font-size: 20px;">front-end</a> <a href="/tags/life-thinking/" style="font-size: 20px;">life thinking</a> <a href="/tags/travel/" style="font-size: 15px;">travel</a> <a href="/tags/前端架构设计/" style="font-size: 10px;">前端架构设计</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/智能硬件/" style="font-size: 10px;">智能硬件</a> <a href="/tags/程序员日常/" style="font-size: 10px;">程序员日常</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <p>&copy; 2019 Vicky Lau</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://liuyiqi123.github.io/2019/08/05/front-end-architecture-design/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
